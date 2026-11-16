@@ -1,0 +1,99 @@
+Manila
+Quezon City
+Cebu City
+Davao City
+Makati
+Taguig
+Pasig
+Mandaluyong
+Iloilo City
+Baguio
+Bacolod
+Cagayan de Oro
+Zamboanga City
+General Santos
+Angeles
+Batangas City
+Lipa
+Dumaguete
+Tacloban
+Legazpi
+New York
+Los Angeles
+Chicago
+Houston
+Phoenix
+Philadelphia
+San Antonio
+San Diego
+Dallas
+San Jose
+Austin
+Seattle
+Denver
+Boston
+Miami
+Atlanta
+Toronto
+Vancouver
+Montreal
+London
+Manchester
+Edinburgh
+Paris
+Lyon
+Berlin
+Munich
+Madrid
+Barcelona
+Lisbon
+Rome
+Milan
+Amsterdam
+Brussels
+Dublin
+Vienna
+Zürich
+Stockholm
+Oslo
+Copenhagen
+Warsaw
+Kraków
+Prague
+Tokyo
+Osaka
+Kyoto
+Seoul
+Busan
+Singapore
+Sydney
+Melbourne
+Brisbane
+Perth
+Auckland
+Dubai
+Abu Dhabi
+Mumbai
+Delhi
+Bangalore
+Hyderabad
+São Paulo
+Rio de Janeiro
+Mexico City
+Bogotá
+Buenos Aires
+Lima
+Santiago
+Cape Town
+Johannesburg
+Nairobi
+Lagos
+Cairo
+Bangkok
+Ho Chi Minh City
+Hanoi
+Jakarta
+Kuala Lumpur
+Hong Kong
+Taipei
+Shanghai

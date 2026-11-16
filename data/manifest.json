@@ -1,0 +1,17 @@
+{
+  "files": [
+    "cities.txt",
+    "companies.txt",
+    "countries.txt",
+    "departments.txt",
+    "email_domains.txt",
+    "first_names.txt",
+    "job_titles.txt",
+    "last_names.txt",
+    "payment_methods.txt",
+    "products.txt",
+    "streets.txt",
+    "ticket_categories.txt",
+    "words.txt"
+  ]
+}

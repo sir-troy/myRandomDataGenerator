@@ -1,0 +1,11 @@
+# Example of a custom list. Any new .txt file here becomes a new data type.
+# One value per line. Lines starting with # are ignored.
+Cash
+Credit card
+Debit card
+E-wallet
+Bank transfer
+Online banking
+Cash on delivery
+Check
+Gift card

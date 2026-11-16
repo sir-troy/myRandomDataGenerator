@@ -1,0 +1,11 @@
+# Example of a custom list. One value per line.
+Billing
+Account Access
+Technical Issue
+Order Status
+Refund Request
+Product Inquiry
+Shipping Delay
+Cancellation
+Feedback
+Complaint
