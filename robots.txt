@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://randomdata.useful-indeed.com/sitemap.xml

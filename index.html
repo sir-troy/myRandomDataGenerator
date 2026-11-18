@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>myRandomDataGenerator</title>
+<title>Random Data Generator</title>
 <meta name="description" content="Create realistic sample data as a CSV file — up to 10 million rows. A simple step-by-step builder with Unique, Required and Key rules. Runs entirely in your browser.">
 <meta name="theme-color" content="#F4F6F8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%232F5D8A'/%3E%3Cpath d='M16 24h32M16 34h32M16 44h32M28 16v36' stroke='%23FBF8F3' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -452,13 +451,19 @@ footer{text-align:center;color:var(--dim);font-size:13.5px;padding:24px 20px 110
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
+<link rel="stylesheet" href="useful-indeed/footer.css">
+<script src="version-log.js"></script>
+<link rel="canonical" href="https://randomdata.useful-indeed.com/">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
+<style id="useful-indeed-mobile">.brand .ui-applogo{width:32px;height:32px;border-radius:9px;display:block;flex:none}/* site fixes */html,body{overflow-x:clip}@media (max-width:560px){.brand{min-width:0;flex:1 1 auto;overflow:hidden}.brand span{white-space:normal;font-size:14px;line-height:1.1;max-width:9.5em}.topcta{padding:8px 12px;font-size:13px;white-space:nowrap}.tswitch{width:56px}[data-theme=dark] .tswitch .knob{transform:translateX(24px)}}</style>
 </head>
 <body>
 <canvas id="confetti"></canvas>
 
 <header class="top">
   <div class="top-in">
-    <button class="brand" id="brand" title="Home"><div class="mark" id="mark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>my<em>Random</em>DataGenerator</span></button>
+    <button class="brand" id="brand" title="Home"><img class="ui-applogo" src="logo.svg" alt="" width="32" height="32"><div class="mark" id="mark" style="display:none"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span><em>Random</em> Data Generator</span></button>
     <nav class="stepper" id="stepper" hidden aria-label="Steps">
       <button data-s="1"><b>1</b><span>Columns</span></button>
       <button data-s="2"><b>2</b><span>Data settings</span></button>
@@ -527,7 +532,7 @@ footer{text-align:center;color:var(--dim);font-size:13.5px;padding:24px 20px 110
       </div>
     </section>
 
-    <section class="hsec" id="versions">
+    <section class="hsec" id="versions" hidden style="display:none!important">
       <h2>Version log</h2>
       <p class="sub">What changed, and when.</p>
       <div class="vlog">
@@ -550,7 +555,7 @@ footer{text-align:center;color:var(--dim);font-size:13.5px;padding:24px 20px 110
       <div class="row" style="margin-top:12px"><button class="btn" id="btnReload">↻ Reload data folder</button></div>
     </section>
   </div>
-  <footer>myRandomDataGenerator · Everything runs in your browser — your generated data is never uploaded or saved.<br><span style="display:inline-block;margin-top:6px">© <span id="cy">2026</span> myRandomDataGenerator. All rights reserved.</span></footer>
+  <footer>Everything runs in your browser — your generated data is never uploaded or saved.<span hidden style="display:none!important">© <span id="cy">2026</span> Random Data Generator.</span></footer>
 </div>
 
 <!-- ================= WIZARD ================= -->
@@ -664,27 +669,6 @@ footer{text-align:center;color:var(--dim);font-size:13.5px;padding:24px 20px 110
       <span class="mid" id="navMid"></span>
       <button class="btn pri" id="btnNext">Next →</button>
     </div>
-  </div>
-</div>
-
-<div class="fab">
-  <button class="fb like" id="btnLike" aria-label="Like"><span class="lab" id="likeLab">Like this tool</span><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.6 5c2.1 0 3.6 1.2 4.4 2.5h2C13.8 6.2 15.3 5 17.4 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg></button>
-  <button class="fb feed" id="btnFeed" aria-label="Send feedback"><span class="lab">Send feedback</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.8 7L3 21l2-6A8 8 0 1 1 21 12z"/></svg></button>
-</div>
-
-<div class="ov" id="fbOv" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
-  <div class="modal">
-    <button class="ib x" data-close="fbOv" aria-label="Close">✕</button>
-    <h3 id="fbTitle">Send feedback</h3>
-    <p class="sub">Ideas, problems, or just a hello — every message is read.</p>
-    <form class="form" id="fbForm" novalidate>
-      <label class="fld"><span>Name</span><input class="in" id="fbName" autocomplete="name" maxlength="120"></label>
-      <label class="fld"><span>Email</span><input class="in" id="fbEmail" type="email" autocomplete="email" maxlength="200"></label>
-      <label class="fld"><span>Comment</span><textarea class="in" id="fbComment" rows="5" maxlength="5000"></textarea></label>
-      <input type="text" id="fbHp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <div class="err" id="fbErr"></div>
-      <div class="row" style="justify-content:flex-end"><button type="button" class="btn" data-close="fbOv">Cancel</button><button type="submit" class="btn pri" id="fbSend">Send feedback</button></div>
-    </form>
   </div>
 </div>
 
@@ -910,7 +894,6 @@ function workerMain(){
 (()=>{
 "use strict";
 /* ================= CONFIG ================= */
-const FEEDBACK_URL="";          // paste your Google Apps Script Web App URL here (see feedback/README.md)
 const DATA_FOLDER="data/";      // folder with your base files (.txt, one item per line)
 const GITHUB_REPO="";           // optional "owner/repo" — auto-detected on github.io sites
 const GITHUB_DATA_PATH="data";  // folder path inside the repo
@@ -925,8 +908,8 @@ const fmtB=b=>{if(!isFinite(b))return"–";const u=["B","KB","MB","GB"];let i=0;
 const fmtT=s=>{if(!isFinite(s))return"–";s=Math.max(0,Math.round(s));return s<60?s+"s":Math.floor(s/60)+"m "+pad2(s%60)+"s";};
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* When hosted as a claude.ai artifact, downloads and feedback go through the page's capabilities. */
-const HOST=(window.claude&&typeof window.claude.use==="function")?window.claude:null;
+/* Optional host hooks for downloads and feedback (unused on this site). */
+const HOST=(window.__host&&typeof window.__host.use==="function")?window.__host:null;
 let dlNS=null,dbNS=null,userNS=null;
 if(HOST){HOST.use("downloads").then(n=>dlNS=n).catch(()=>{});HOST.use("db").then(n=>dbNS=n).catch(()=>{});HOST.use("user").then(n=>userNS=n).catch(()=>{});}
 async function saveFile(name,blob){
@@ -1259,7 +1242,7 @@ $("#brand").onclick=showHome;
 let gw=null,parts=null,writable=null,blobURL=null,lastBlob=null,t0=0,bytes=0;
 const CIRC=2*Math.PI*52;
 function setRing(p){$("#ringBar").style.strokeDashoffset=CIRC*(1-p);$("#ringPct").textContent=Math.floor(p*100)+"%";}
-function fileName(){const d=new Date();return`myRandomDataGenerator_${S.rows}_rows_${d.getFullYear()}${pad2(d.getMonth()+1)}${pad2(d.getDate())}${pad2(d.getHours())}${pad2(d.getMinutes())}${pad2(d.getSeconds())}.csv`;}
+function fileName(){const d=new Date();return`random-data_${S.rows}_rows_${d.getFullYear()}${pad2(d.getMonth()+1)}${pad2(d.getDate())}${pad2(d.getHours())}${pad2(d.getMinutes())}${pad2(d.getSeconds())}.csv`;}
 function wipe(silent){if(blobURL){URL.revokeObjectURL(blobURL);blobURL=null;}parts=null;lastBlob=null;if(!silent)toast("Cleared from memory");}
 $("#btnGen").onclick=async()=>{await settled();
   if(issues.errors.length){renderMsgs();toast("Please fix the highlighted message first.");return;}
@@ -1303,7 +1286,7 @@ function openOv(id){lastFocus=document.activeElement;$("#"+id).classList.add("sh
 function closeOv(id){$("#"+id).classList.remove("show");if(lastFocus&&lastFocus.focus)lastFocus.focus();}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-close]");if(b)closeOv(b.dataset.close);});
 $$(".ov").forEach(o=>o.addEventListener("click",e=>{if(e.target===o&&o.id!=="genOv")closeOv(o.id);}));
-document.addEventListener("keydown",e=>{if(e.key==="Escape")["fbOv","sqlOv"].forEach(id=>{if($("#"+id).classList.contains("show"))closeOv(id);});});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")["sqlOv"].forEach(id=>{if($("#"+id).classList.contains("show"))closeOv(id);});});
 
 /* ================= SQL DDL ================= */
 function ddl(){const d=$("#sqlDialect").value,tbl=($("#tblName").value||"sample_data").trim();
@@ -1324,7 +1307,7 @@ $("#tblName").oninput=()=>$("#sqlCode").textContent=ddl();$("#sqlDialect").oncha
 $("#sqlCopy").onclick=()=>copy($("#sqlCode").textContent,"SQL copied");
 
 /* ================= SAVE / LOAD SCHEMA (a file on the viewer's own device) ================= */
-function exportSchema(){const data={app:"myRandomDataGenerator",v:2,rows:S.rows,seed:S.seed,quality:S.quality,dup:S.dup,dupPct:S.dupPct,csv:{delimiter:S.delimiter,nullToken:S.nullToken,header:S.header,quoteAll:S.quoteAll,crlf:S.crlf,bom:S.bom},columns:schemaOut()};
+function exportSchema(){const data={app:"Random Data Generator",v:2,rows:S.rows,seed:S.seed,quality:S.quality,dup:S.dup,dupPct:S.dupPct,csv:{delimiter:S.delimiter,nullToken:S.nullToken,header:S.header,quoteAll:S.quoteAll,crlf:S.crlf,bom:S.bom},columns:schemaOut()};
   saveFile("data-schema.json",new Blob([JSON.stringify(data,null,2)],{type:"application/json"}));}
 $("#btnExport").onclick=exportSchema;$("#btnExport2").onclick=exportSchema;
 $("#btnImport").onclick=()=>$("#fileIn").click();
@@ -1336,27 +1319,6 @@ $("#fileIn").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!
     syncQual();syncDup();renderCols(true);if(d.rows)setRows(d.rows);else schedulePreview();toast("Schema loaded");}
   catch(_){toast("That file isn't a saved schema.");}};
 
-/* ================= FEEDBACK & LIKE ================= */
-$("#btnFeed").onclick=()=>{$("#fbErr").textContent="";openOv("fbOv");setTimeout(()=>$("#fbName").focus(),250);};
-$("#fbForm").onsubmit=async e=>{e.preventDefault();
-  const name=$("#fbName").value.trim(),email=$("#fbEmail").value.trim(),comment=$("#fbComment").value.trim(),err=$("#fbErr");
-  if(!name){err.textContent="Please enter your name.";$("#fbName").focus();return;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){err.textContent="Please enter a valid email address.";$("#fbEmail").focus();return;}
-  if(!comment){err.textContent="Please write a comment.";$("#fbComment").focus();return;}
-  if(!FEEDBACK_URL&&!dbNS){err.textContent="Feedback isn't connected yet. (Site owner: set FEEDBACK_URL — see feedback/README.md.)";return;}
-  err.textContent="";const btn=$("#fbSend");btn.disabled=true;btn.textContent="Sending…";
-  const done=()=>{$("#fbForm").reset();closeOv("fbOv");toast("Thank you — your feedback was sent.");floatIcons($("#btnFeed"),6);};
-  try{if(FEEDBACK_URL){await fetch(FEEDBACK_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name,email,comment,website:$("#fbHp").value,page:location.href})});}
-    else{if($("#fbHp").value)throw 0;const uid=userNS?await userNS.id():"anon",ts=new Date();await dbNS.doc("feedback/"+uid+"/entries/"+ts.getTime()).set({name,email,comment,at:ts.toISOString()});}
-    done();}
-  catch(_){err.textContent="Couldn't send right now. Please try again in a moment.";}
-  finally{btn.disabled=false;btn.textContent="Send feedback";}};
-let liked=false;
-$("#btnLike").onclick=()=>{liked=!liked;$("#btnLike").classList.toggle("on",liked);$("#likeLab").textContent=liked?"Thanks for the like!":"Like this tool";if(liked){floatIcons($("#btnLike"),10);toast("Thanks for the like!");}};
-function floatIcons(el,n){if(reduce)return;const r=el.getBoundingClientRect();
-  for(let i=0;i<n;i++){const s=document.createElement("span");s.className="float";s.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.6 5c2.1 0 3.6 1.2 4.4 2.5h2C13.8 6.2 15.3 5 17.4 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>';
-    s.style.left=(r.left+r.width/2-8)+"px";s.style.top=(r.top+r.height/2-8)+"px";s.style.setProperty("--dx",(Math.random()*-120-10)+"px");s.style.setProperty("--dy",(Math.random()*-160-40)+"px");
-    s.style.animationDelay=(i*50)+"ms";document.body.appendChild(s);setTimeout(()=>s.remove(),1700);}}
 
 /* ================= UI helpers ================= */
 function toast(s,ms=2800){const t=document.createElement("div");t.className="toast";t.textContent=s;$("#toasts").appendChild(t);setTimeout(()=>{t.classList.add("out");setTimeout(()=>t.remove(),260);},ms);}
@@ -1400,5 +1362,13 @@ pushDicts();loadLibrary(false);syncLibVisible();
 $("#btnReload").onclick=()=>loadLibrary(true);
 })();
 </script>
+<footer class="ui-foot">
+  <div class="ui-foot-in">
+    <a class="ui-foot-brand" href="https://useful-indeed.com" title="More small, free tools on useful-indeed"><img src="useful-indeed/logo.svg" alt="useful-indeed logo" width="22" height="22"><span>© <span data-ui-year>2026</span> <b>useful-indeed</b></span></a>
+    <nav class="ui-foot-nav" aria-label="Site"><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav>
+    <button type="button" class="ui-foot-ver" data-ui-ver>v1.0 · Version log</button>
+  </div>
+</footer>
+<script src="useful-indeed/badge.js" defer></script>
 </body>
 </html>
